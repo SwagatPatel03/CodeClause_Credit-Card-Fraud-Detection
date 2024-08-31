@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Credit Card Fraud Detection</h2>
+        <form method="POST" action="/predict">
+            <input type="text" name="data" placeholder="Enter transaction data (comma-separated)">
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+            <p>{{ prediction_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
